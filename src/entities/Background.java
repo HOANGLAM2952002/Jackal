@@ -14,7 +14,7 @@ public class Background extends GameObject {
      * Contractor load image
      */
     public Background(){
-        this.renderer = new ImageRenderer("materials/background.png");
+        //this.renderer = new ImageRenderer("materials/background.png");
         // background
         this.position.x = 0;
         this.position.y = 0;

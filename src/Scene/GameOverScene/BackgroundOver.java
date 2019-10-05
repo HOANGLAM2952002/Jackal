@@ -8,7 +8,7 @@ import renderer.ImageRenderer;
 
 public class BackgroundOver extends GameObject {
     public BackgroundOver(){
-        this.renderer = new ImageRenderer("assets/images/scenes/game-over-background.jpg");
+        this.renderer = new ImageRenderer("materials/background.png");
         this.anchor.set(0,0);
     }
 
@@ -22,6 +22,10 @@ public class BackgroundOver extends GameObject {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            remainCap = 4;
+            remainIron = 4;
+            pointCap = 0;
+            pointIron = 0;
             SceneManager.signNewScene(new GameWelcomeScene());
         }
     }

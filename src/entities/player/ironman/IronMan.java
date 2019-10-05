@@ -1,4 +1,6 @@
 package entities.player.ironman;
+import Scene.GameOverScene.GameOverScene;
+import Scene.SceneManager;
 import bases.*;
 
 import renderer.Animation;
@@ -10,7 +12,7 @@ public class IronMan extends GameObject {
 
     public IronMan(){
         this.renderer = new Animation(10, SpriteUtils.loadImage("materials/IronMan.png"));
-        this.position = new Vector2D(580, 380);
+        this.position = new Vector2D(580, 300);
         this.cnt = 0;
         this.cnt1 = 0;
         this.boxCollider = new BoxCollider(this, 32, 32);
@@ -35,9 +37,10 @@ public class IronMan extends GameObject {
 //            vx = -10;
 //        }
 
-        if (KeyPressed.getInstance().IronshootPresed && cnt >= 20){
+        if (KeyPressed.getInstance().IronshootPresed && cnt >= 20 && IronUltimate >= 0){
             this.castSpells();
             cnt = 0;
+            IronUltimate--;
         } else {
             cnt++;
         }
@@ -50,7 +53,7 @@ public class IronMan extends GameObject {
         }
 
         this.position.x = Utils.clamp(this.position.x, 530, 580);
-        this.position.y = Utils.clamp(this.position.y, 220, 540);
+        this.position.y = Utils.clamp(this.position.y, 20, 540);
         this.velocity.set(vx, vy);
 
 
@@ -83,8 +86,14 @@ public class IronMan extends GameObject {
     @Override
     public void deActive() {
         super.deActive();
-        IronManExplosion ironManExplosion = GameObject.recycle(IronManExplosion.class);
+        IronManExplosion ironManExplosion = new IronManExplosion();
         ironManExplosion.position.set(this.position);
+        if (GameObject.remainIron > 0){
+            IronMan ironMan = new IronMan();
+            ironMan.position.set(580, 300);
+        } else {
+            SceneManager.signNewScene(new GameOverScene());
+        }
     }
 }
 

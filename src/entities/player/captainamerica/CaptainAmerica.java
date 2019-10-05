@@ -1,5 +1,7 @@
 package entities.player.captainamerica;
 
+import Scene.GameOverScene.GameOverScene;
+import Scene.SceneManager;
 import bases.*;
 import renderer.Animation;
 
@@ -10,7 +12,7 @@ public class CaptainAmerica extends GameObject{
 
     public CaptainAmerica(){
         this.renderer = new Animation(10, SpriteUtils.loadImage("materials/CaptainAmerica.png"));
-        this.position = new Vector2D(20, 380);
+        this.position = new Vector2D(20, 300);
         this.cnt = 0;
         this.cnt1 = 0;
         this.boxCollider = new BoxCollider(this,32,32);
@@ -31,9 +33,10 @@ public class CaptainAmerica extends GameObject{
 //            vx = -10;
 //        }
 
-        if (KeyPressed.getInstance().CaptainshootPresed && cnt >= 20){
+        if (KeyPressed.getInstance().CaptainshootPresed && cnt >= 20 && CapUltimate >= 0){
             this.castSpells();
             cnt = 0;
+            CapUltimate--;
         } else {
             cnt++;
         }
@@ -46,7 +49,7 @@ public class CaptainAmerica extends GameObject{
         }
 
         this.position.x = Utils.clamp(this.position.x, 20,70);
-        this.position.y = Utils.clamp(this.position.y, 220, 540);
+        this.position.y = Utils.clamp(this.position.y, 20, 540);
 
         this.velocity.set(vx,vy);
         super.run();
@@ -75,5 +78,11 @@ public class CaptainAmerica extends GameObject{
         super.deActive();
         CaptainAmericaExplosion captainAmericaExplosion = new CaptainAmericaExplosion();
         captainAmericaExplosion.position.set(this.position);
+        if (GameObject.remainCap > 0){
+            CaptainAmerica captainAmerica = new CaptainAmerica();
+            captainAmerica.position.set(20, 300);
+        } else {
+            SceneManager.signNewScene(new GameOverScene());
+        }
     }
 }

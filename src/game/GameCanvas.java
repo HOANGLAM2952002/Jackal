@@ -3,6 +3,7 @@ import Scene.SceneManager;
 import Scene.welcomeScene.GameWelcomeScene;
 import bases.GameObject;
 import bases.KeyPressed;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -148,7 +149,82 @@ public class GameCanvas extends JPanel {
     protected void paintComponent(Graphics g) {
         g.setColor(Color.black);
         g.fillRect(0, 0, 600, 600);
+        g.setColor(Color.black);
+        g.fillRect(600,0, 400,600);
         GameObject.renderAll(g);
+        g.setColor(Color.darkGray);
+        g.fillRect(600, 0, 5, 600);
+
+        /**
+         * IRON MAN STATS
+         */
+        g.setColor(Color.red);
+        g.fillRect(605, 270, 80, 40);
+        g.setColor(Color.yellow);
+        g.drawString("IRON MAN", 615, 295);
+        g.setColor(Color.blue);
+        g.drawString("Remaining Lives: " + GameObject.remainIron + "", 610, 330);
+        g.setColor(Color.yellow);
+        g.drawString("Points: " + GameObject.pointIron + "", 610, 360);
+        g.setColor(Color.MAGENTA);
+        g.drawString("Ultimate Left: " + GameObject.IronUltimate, 610, 390);
+
+        g.setColor(Color.GREEN);
+        g.drawString("UP: [ARROW UP]", 610, 420);
+        g.drawString("DOWN: [ARROW DOWN]", 610, 450);
+        g.drawString("Shoot ONCE: [COMMA]", 610, 480);
+        g.drawString("Ultimate: [M]", 610, 510);
+
+        /**
+         * CAPTAIN AMERICA STATS
+         */
+        g.setColor(Color.white);
+        g.fillRect(605, 0, 130, 40);
+        g.setColor(Color.blue);
+        g.drawString("CAPTAIN AMERICA", 615, 25);
+        g.setColor(Color.blue);
+        g.drawString("Remaining Lives: " + GameObject.remainCap + "", 610, 60);
+        g.setColor(Color.yellow);
+        g.drawString("Points: " + GameObject.pointCap + "", 610, 90);
+        g.setColor(Color.MAGENTA);
+        g.drawString("Ultimate Left: " + GameObject.CapUltimate, 610, 120);
+
+        g.setColor(Color.GREEN);
+        g.drawString("UP: [W]", 610, 150);
+        g.drawString("DOWN: [S]", 610, 180);
+        g.drawString("Shoot ONCE: [F]", 610, 210);
+        g.drawString("Ultimate: [G]", 610, 240);
+
+        /**
+         * WINS STATE
+         */
+        if (GameObject.remainCap < 0){
+            g.setColor(Color.PINK);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+            g.drawString("IRON MAN WINS", 740, 25);
+        }
+
+        if (GameObject.remainIron < 0){
+            g.setColor(Color.PINK);
+            g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+            g.drawString("CAPTAIN AMERICA WINS", 740, 25);
+        }
+
+        if (GameObject.pointIron >= 100){
+            GameObject.remainIron++;
+            GameObject.pointIron -= 100;
+        }
+
+        g.setColor(Color.WHITE);
+        g.drawString("RULE OF THE GAME", 790, 80);
+        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
+        g.drawString("   Ultimate -1 = CANNOT SHOOT TRIPLE", 755, 150);
+        g.drawString("   100 Points = BONUS LIVE", 755, 180);
+        g.drawString("   THANOS = 30 POINTS", 755, 210);
+        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
+        g.drawString("   PLAYER = 20 POINTS", 755, 270);
+        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
+
     }
 
 }

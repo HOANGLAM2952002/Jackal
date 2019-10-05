@@ -1,19 +1,19 @@
-package entities.bomb;
+package entities.thanos;
 
 import bases.FrameCounter;
 import bases.GameObject;
 
-public class BombSpawner extends GameObject {
+public class ThanosSpawner extends GameObject {
     FrameCounter frameCounter;
 
-    public BombSpawner(){
-        frameCounter = new FrameCounter(150);
+    public ThanosSpawner(){
+        frameCounter = new FrameCounter(200);
     }
     @Override
     public void run(){
         if (frameCounter.expired){
-            Bomb newBomb = GameObject.recycle(Bomb.class);
-            newBomb.position.set(303, 0);
+            Thanos newThanos = GameObject.recycle(Thanos.class);
+            newThanos.position.set(303, 70);
             frameCounter.reset();
         } else {
             frameCounter.run();

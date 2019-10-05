@@ -1,4 +1,4 @@
-package entities.bomb;
+package entities.gauntlet;
 
 import bases.BoxCollider;
 import bases.GameObject;
@@ -7,10 +7,10 @@ import bases.Vector2D;
 import renderer.Animation;
 
 
-public class Bomb extends GameObject {
-    public Bomb(){
-        this.renderer = new Animation(20, SpriteUtils.loadImage("materials/bomb.png"));
-        this.position = new Vector2D(303, 0);
+public class Gauntlet extends GameObject {
+    public Gauntlet(){
+        this.renderer = new Animation(20, SpriteUtils.loadImage("materials/Gauntlet.png"));
+        this.position = new Vector2D(800, 800);
         this.boxCollider = new BoxCollider(this, 32,32);
     }
     @Override
@@ -34,7 +34,7 @@ public class Bomb extends GameObject {
     @Override
     public void deActive() {
         super.deActive();
-        BombExplosion bombExplosion = GameObject.recycle(BombExplosion.class);
-        bombExplosion.position.set(this.position);
+        GauntletExplosion gauntletExplosion = GameObject.recycle(GauntletExplosion.class);
+        gauntletExplosion.position.set(this.position);
     }
 }

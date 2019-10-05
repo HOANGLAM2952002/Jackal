@@ -12,7 +12,7 @@ public class GameWindow extends JFrame {
 
     public GameWindow(){
         this.setResizable(false);
-        this.setSize(800, 600);
+        this.setSize(1000, 600);
 
         this.setContentPane(this.canvas);
         this.setVisible(true);

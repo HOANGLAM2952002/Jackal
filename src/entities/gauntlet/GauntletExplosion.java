@@ -1,11 +1,11 @@
-package entities.bomb;
+package entities.gauntlet;
 
 import bases.GameObject;
 import bases.SpriteUtils;
 import renderer.Animation;
 
-public class BombExplosion extends GameObject {
-    public BombExplosion(){
+public class GauntletExplosion extends GameObject {
+    public GauntletExplosion(){
         this.renderer = new Animation(5, true,
                 SpriteUtils.loadImage("assets/images/enemies/explosion/0.png"),
                 SpriteUtils.loadImage("assets/images/enemies/explosion/1.png"),
