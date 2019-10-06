@@ -39,13 +39,15 @@ public class ThanosBullet extends GameObject {
         IronManShoot ironManShoot = GameObject.checkCollider(this, IronManShoot.class);
         if (ironManShoot != null){
             ironManShoot.deActive();
-            this.deActive();
+            this.deActiveExplode();
         }
 
         CaptainAmerica captainAmerica = GameObject.checkCollider(this, CaptainAmerica.class);
         if (captainAmerica != null){
-            captainAmerica.deActive();
-            this.deActive();
+            if (remainCap >= 0){
+                captainAmerica.deActive();
+                this.deActive();
+            }
             if (pointCap >= 10){
                 pointCap -= 10;
             } else {
@@ -56,7 +58,7 @@ public class ThanosBullet extends GameObject {
         CaptainAmericaShoot captainAmericaShoot = GameObject.checkCollider(this, CaptainAmericaShoot.class);
         if (captainAmericaShoot != null){
             captainAmericaShoot.deActive();
-            this.deActive();
+            this.deActiveExplode();
         }
     }
 
@@ -66,4 +68,9 @@ public class ThanosBullet extends GameObject {
         }
     }
 
+    public void deActiveExplode() {
+        super.deActive();
+        ThanosBulletExplosion thanosBulletExplosion = GameObject.recycle(ThanosBulletExplosion.class);
+        thanosBulletExplosion.position.set(this.position);
+    }
 }

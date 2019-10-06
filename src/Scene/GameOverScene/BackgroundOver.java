@@ -26,6 +26,8 @@ public class BackgroundOver extends GameObject {
             remainIron = 4;
             pointCap = 0;
             pointIron = 0;
+            CapUltimate = 5;
+            IronUltimate = 5;
             SceneManager.signNewScene(new GameWelcomeScene());
         }
     }

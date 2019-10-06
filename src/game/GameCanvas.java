@@ -210,14 +210,14 @@ public class GameCanvas extends JPanel {
         /**
          * WINS STATE
          */
-        if (GameObject.remainCap < 0){
-            g.setColor(Color.PINK);
+        if (GameObject.remainCap <= 0){
+            g.setColor(Color.ORANGE);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
             g.drawString("IRON MAN WINS", 740, 25);
         }
 
-        if (GameObject.remainIron < 0){
-            g.setColor(Color.PINK);
+        if (GameObject.remainIron <= 0){
+            g.setColor(Color.ORANGE);
             g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
             g.drawString("CAPTAIN AMERICA WINS", 740, 25);
         }

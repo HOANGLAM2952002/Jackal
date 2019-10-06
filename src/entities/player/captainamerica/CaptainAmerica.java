@@ -82,7 +82,9 @@ public class CaptainAmerica extends GameObject{
             CaptainAmerica captainAmerica = new CaptainAmerica();
             captainAmerica.position.set(20, 300);
         } else {
-            SceneManager.signNewScene(new GameOverScene());
+            if (GameObject.remainCap == 0){
+                SceneManager.signNewScene(new GameOverScene());
+            }
         }
     }
 }

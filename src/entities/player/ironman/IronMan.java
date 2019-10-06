@@ -72,7 +72,7 @@ public class IronMan extends GameObject {
      * add into array list playerSpells
      */
     private void castSpells() {
-        int numberB = 6;
+        int numberB = 5;
         double startAngle = -120;
         double endAngle = -60;
         double step = (endAngle - startAngle) / (numberB - 1);
@@ -92,7 +92,9 @@ public class IronMan extends GameObject {
             IronMan ironMan = new IronMan();
             ironMan.position.set(580, 300);
         } else {
-            SceneManager.signNewScene(new GameOverScene());
+            if (GameObject.remainIron == 0){
+                SceneManager.signNewScene(new GameOverScene());
+            }
         }
     }
 }
