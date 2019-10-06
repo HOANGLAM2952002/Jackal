@@ -196,6 +196,18 @@ public class GameCanvas extends JPanel {
         g.drawString("Ultimate: [G]", 610, 240);
 
         /**
+         * RULE
+         */
+        g.setColor(Color.WHITE);
+        g.drawString("RULE OF THE GAME", 790, 80);
+        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
+        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
+        g.drawString("   100 Points = BONUS LIVE", 755, 180);
+        g.drawString("   THANOS = 30 POINTS", 755, 210);
+        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
+        g.drawString("   PLAYER = 20 POINTS", 755, 270);
+        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
+        /**
          * WINS STATE
          */
         if (GameObject.remainCap < 0){
@@ -214,17 +226,6 @@ public class GameCanvas extends JPanel {
             GameObject.remainIron++;
             GameObject.pointIron -= 100;
         }
-
-        g.setColor(Color.WHITE);
-        g.drawString("RULE OF THE GAME", 790, 80);
-        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
-        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
-        g.drawString("   100 Points = BONUS LIVE", 755, 180);
-        g.drawString("   THANOS = 30 POINTS", 755, 210);
-        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
-        g.drawString("   PLAYER = 20 POINTS", 755, 270);
-        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
-
     }
 
 }
