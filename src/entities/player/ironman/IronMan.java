@@ -92,9 +92,7 @@ public class IronMan extends GameObject {
             IronMan ironMan = new IronMan();
             ironMan.position.set(580, 300);
         } else {
-            if (GameObject.remainIron == 0){
-                SceneManager.signNewScene(new GameOverScene());
-            }
+            SceneManager.signNewScene(new GameOverScene());
         }
     }
 }
