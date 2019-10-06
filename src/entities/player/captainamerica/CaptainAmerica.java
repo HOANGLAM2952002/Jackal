@@ -62,7 +62,7 @@ public class CaptainAmerica extends GameObject{
     }
 
     private void castSpells() {
-        int numberB = 3;
+        int numberB = 6;
         double startAngle = -120;
         double endAngle = -60;
         double step = (startAngle - endAngle) / (numberB - 1);

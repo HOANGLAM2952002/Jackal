@@ -72,7 +72,7 @@ public class IronMan extends GameObject {
      * add into array list playerSpells
      */
     private void castSpells() {
-        int numberB = 3;
+        int numberB = 6;
         double startAngle = -120;
         double endAngle = -60;
         double step = (endAngle - startAngle) / (numberB - 1);

@@ -218,7 +218,7 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.WHITE);
         g.drawString("RULE OF THE GAME", 790, 80);
         g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
-        g.drawString("   Ultimate -1 = CANNOT SHOOT TRIPLE", 755, 150);
+        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
         g.drawString("   100 Points = BONUS LIVE", 755, 180);
         g.drawString("   THANOS = 30 POINTS", 755, 210);
         g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
