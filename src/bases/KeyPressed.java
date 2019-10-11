@@ -1,6 +1,11 @@
 package bases;
 
 public class KeyPressed {
+    public boolean anyKeyPressed;
+
+    /**
+     * IRON MOVES AND SHOOT
+     */
     public boolean upPressed;
     public boolean downPressed;
     public boolean rightPressed;
@@ -8,9 +13,13 @@ public class KeyPressed {
 
     public boolean IronshootPresed;
     public boolean IronshootOnePressed;
+    public boolean IronReload;
 
-    public boolean anyKeyPressed;
+    public boolean IronBuffHealth;
 
+    /**
+     * CAPTAIN MOVES AND SHOOT
+     */
     public boolean WPressed;
     public boolean SPressed;
     public boolean DPressed;
@@ -18,6 +27,9 @@ public class KeyPressed {
 
     public boolean CaptainshootPresed;
     public boolean CaptainshootOnePressed;
+    public boolean CapReload;
+
+    public boolean CapBuffHealth;
 
 
     /**
@@ -32,6 +44,8 @@ public class KeyPressed {
 //        this.leftPressed = false;
         this.IronshootPresed = false;
         this.IronshootOnePressed = false;
+        this.IronReload = false;
+        this.IronBuffHealth = false;
 
         this.anyKeyPressed = false;
 
@@ -41,6 +55,8 @@ public class KeyPressed {
 //        this.APressed = false;
         this.CaptainshootPresed = false;
         this.CaptainshootOnePressed = false;
+        this.CapReload = false;
+        this.CapBuffHealth = false;
     }
 
     public static KeyPressed getInstance(){

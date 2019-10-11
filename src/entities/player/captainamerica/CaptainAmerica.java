@@ -41,12 +41,19 @@ public class CaptainAmerica extends GameObject{
             cnt++;
         }
 
-        if (KeyPressed.getInstance().CaptainshootOnePressed && cnt1 >= 20){
+        if (KeyPressed.getInstance().CaptainshootOnePressed && cnt1 >= 20 && CapNormal >= 0){
             this.castOne();
             cnt1 = 0;
+            CapNormal--;
         } else {
             cnt1++;
         }
+
+        if (KeyPressed.getInstance().CapReload){
+            CapNormal = 10;
+        }
+
+
 
         this.position.x = Utils.clamp(this.position.x, 20,70);
         this.position.y = Utils.clamp(this.position.y, 20, 540);

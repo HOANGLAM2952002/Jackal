@@ -11,8 +11,10 @@ public class GameObject {
     public static int remainIron = 4;
     public static int pointCap = 0;
     public static int pointIron = 0;
-    public static int IronUltimate = 5;
-    public static int CapUltimate = 5;
+    public static int IronUltimate = 3;
+    public static int CapUltimate = 3;
+    public static  int IronNormal = 10;
+    public static int CapNormal = 10;
 
     private static ArrayList<GameObject> gameObjects = new ArrayList<>();
 

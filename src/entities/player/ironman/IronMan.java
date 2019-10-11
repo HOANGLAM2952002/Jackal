@@ -45,11 +45,16 @@ public class IronMan extends GameObject {
             cnt++;
         }
 
-        if (KeyPressed.getInstance().IronshootOnePressed && cnt1 >= 20){
+        if (KeyPressed.getInstance().IronshootOnePressed && cnt1 >= 20 && IronNormal >= 0){
             this.castOne();
             cnt1 = 0;
+            IronNormal--;
         } else {
             cnt1++;
+        }
+
+        if (KeyPressed.getInstance().IronReload){
+            IronNormal = 10;
         }
 
         this.position.x = Utils.clamp(this.position.x, 530, 580);

@@ -54,6 +54,10 @@ public class GameCanvas extends JPanel {
                     KeyPressed.getInstance().IronshootOnePressed = true;
                 }
 
+                if (e.getKeyCode() == KeyEvent.VK_N){
+                    KeyPressed.getInstance().IronReload = true;
+                }
+
                 /**
                  * Captain America
                  */
@@ -82,7 +86,9 @@ public class GameCanvas extends JPanel {
                     KeyPressed.getInstance().CaptainshootPresed = true;
                 }
 
-
+                if (e.getKeyCode() == KeyEvent.VK_H){
+                    KeyPressed.getInstance().IronReload = true;
+                }
             }
 
             @Override
@@ -111,6 +117,9 @@ public class GameCanvas extends JPanel {
                 }
                 if (e.getKeyCode() == KeyEvent.VK_COMMA){
                     KeyPressed.getInstance().IronshootOnePressed = false;
+                }
+                if (e.getKeyCode() == KeyEvent.VK_N){
+                    KeyPressed.getInstance().IronReload = false;
                 }
 
                 /**
@@ -141,6 +150,10 @@ public class GameCanvas extends JPanel {
                     KeyPressed.getInstance().CaptainshootPresed = false;
                 }
 
+                if (e.getKeyCode() == KeyEvent.VK_H){
+                    KeyPressed.getInstance().IronReload = false;
+                }
+
             }
         });
     }
@@ -167,13 +180,15 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.yellow);
         g.drawString("Points: " + GameObject.pointIron + "", 610, 360);
         g.setColor(Color.MAGENTA);
-        g.drawString("Ultimate Left: " + GameObject.IronUltimate, 610, 390);
+        g.drawString("Normal Left: " + GameObject.IronNormal, 610, 390);
+        g.drawString("Ultimate Left: " + GameObject.IronUltimate, 610, 420);
 
         g.setColor(Color.GREEN);
-        g.drawString("UP: [ARROW UP]", 610, 420);
-        g.drawString("DOWN: [ARROW DOWN]", 610, 450);
-        g.drawString("Shoot ONCE: [COMMA]", 610, 480);
-        g.drawString("Ultimate: [M]", 610, 510);
+        g.drawString("UP: [ARROW UP]", 800, 330);
+        g.drawString("DOWN: [ARROW DOWN]", 800, 360);
+        g.drawString("Shoot ONCE: [COMMA]", 800, 390);
+        g.drawString("Ultimate: [M]", 800, 420);
+        g.drawString("Reload: [N]", 800, 450);
 
         /**
          * CAPTAIN AMERICA STATS
@@ -187,26 +202,28 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.yellow);
         g.drawString("Points: " + GameObject.pointCap + "", 610, 90);
         g.setColor(Color.MAGENTA);
-        g.drawString("Ultimate Left: " + GameObject.CapUltimate, 610, 120);
+        g.drawString("Normal Left: " + GameObject.CapNormal, 610, 120);
+        g.drawString("Ultimate Left: " + GameObject.CapUltimate, 610, 150);
 
         g.setColor(Color.GREEN);
-        g.drawString("UP: [W]", 610, 150);
-        g.drawString("DOWN: [S]", 610, 180);
-        g.drawString("Shoot ONCE: [F]", 610, 210);
-        g.drawString("Ultimate: [G]", 610, 240);
+        g.drawString("UP: [W]", 800, 60);
+        g.drawString("DOWN: [S]", 800, 90);
+        g.drawString("Shoot ONCE: [F]", 800, 120);
+        g.drawString("Ultimate: [G]", 800, 150);
+        g.drawString("Reload: [H]", 800, 180);
 
         /**
          * RULE
          */
-        g.setColor(Color.WHITE);
-        g.drawString("RULE OF THE GAME", 790, 80);
-        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
-        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
-        g.drawString("   100 Points = BONUS LIVE", 755, 180);
-        g.drawString("   THANOS = 30 POINTS", 755, 210);
-        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
-        g.drawString("   PLAYER = 20 POINTS", 755, 270);
-        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
+//        g.setColor(Color.WHITE);
+//        g.drawString("RULE OF THE GAME", 790, 80);
+//        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
+//        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
+//        g.drawString("   100 Points = BONUS LIVE", 755, 180);
+//        g.drawString("   THANOS = 30 POINTS", 755, 210);
+//        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
+//        g.drawString("   PLAYER = 20 POINTS", 755, 270);
+//        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
         /**
          * WINS STATE
          */
@@ -226,6 +243,8 @@ public class GameCanvas extends JPanel {
             GameObject.remainIron++;
             GameObject.pointIron -= 100;
         }
+
+
     }
 
 }

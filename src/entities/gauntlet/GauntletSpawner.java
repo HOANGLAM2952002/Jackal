@@ -10,7 +10,7 @@ public class GauntletSpawner extends GameObject {
 
 
     public GauntletSpawner(){
-        frameCounter = new FrameCounter(200);
+        frameCounter = new FrameCounter(300);
     }
     @Override
     public void run(){
