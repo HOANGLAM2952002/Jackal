@@ -29,7 +29,7 @@ public class IronManShoot extends GameObject{
             System.out.println("dang va cham");
             gauntlet.deActive();
             this.deActive();
-            pointIron += 5;
+            pointIron += 10;
         }
 
         CaptainAmerica captainAmerica = GameObject.checkCollider(this, CaptainAmerica.class);

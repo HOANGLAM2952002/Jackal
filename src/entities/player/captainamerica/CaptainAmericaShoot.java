@@ -28,7 +28,7 @@ public class CaptainAmericaShoot extends GameObject {
             System.out.println("dang va cham");
             gauntlet.deActive();
             this.deActive();
-            pointCap += 5;
+            pointCap += 10;
         }
 
         IronMan ironMan = GameObject.checkCollider(this, IronMan.class);

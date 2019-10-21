@@ -87,7 +87,7 @@ public class GameCanvas extends JPanel {
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_H){
-                    KeyPressed.getInstance().IronReload = true;
+                    KeyPressed.getInstance().CapReload = true;
                 }
             }
 
@@ -151,7 +151,7 @@ public class GameCanvas extends JPanel {
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_H){
-                    KeyPressed.getInstance().IronReload = false;
+                    KeyPressed.getInstance().CapReload = false;
                 }
 
             }
@@ -166,7 +166,10 @@ public class GameCanvas extends JPanel {
         g.fillRect(600,0, 400,600);
         GameObject.renderAll(g);
         g.setColor(Color.darkGray);
-        g.fillRect(600, 0, 5, 600);
+        g.fillRect(600, 0, 3, 600);
+        //g.fillRect(302, 0, 3, 600);
+        //g.fillRect(600, 265, 390, 3);
+
 
         /**
          * IRON MAN STATS
@@ -175,42 +178,44 @@ public class GameCanvas extends JPanel {
         g.fillRect(605, 270, 80, 40);
         g.setColor(Color.yellow);
         g.drawString("IRON MAN", 615, 295);
-        g.setColor(Color.blue);
+        g.setColor(Color.red);
         g.drawString("Remaining Lives: " + GameObject.remainIron + "", 610, 330);
         g.setColor(Color.yellow);
         g.drawString("Points: " + GameObject.pointIron + "", 610, 360);
-        g.setColor(Color.MAGENTA);
+        g.setColor(Color.cyan);
         g.drawString("Normal Left: " + GameObject.IronNormal, 610, 390);
+        g.setColor(Color.ORANGE);
         g.drawString("Ultimate Left: " + GameObject.IronUltimate, 610, 420);
 
-        g.setColor(Color.GREEN);
-        g.drawString("UP: [ARROW UP]", 800, 330);
-        g.drawString("DOWN: [ARROW DOWN]", 800, 360);
-        g.drawString("Shoot ONCE: [COMMA]", 800, 390);
-        g.drawString("Ultimate: [M]", 800, 420);
-        g.drawString("Reload: [N]", 800, 450);
+//        g.setColor(Color.GREEN);
+//        g.drawString("UP: [ARROW UP]", 800, 330);
+//        g.drawString("DOWN: [ARROW DOWN]", 800, 360);
+//        g.drawString("Shoot ONCE: [COMMA]", 800, 390);
+//        g.drawString("Ultimate: [M]", 800, 420);
+//        g.drawString("Reload: [N]", 800, 450);
 
         /**
          * CAPTAIN AMERICA STATS
          */
-        g.setColor(Color.white);
+        g.setColor(Color.blue);
         g.fillRect(605, 0, 130, 40);
-        g.setColor(Color.blue);
+        g.setColor(Color.white);
         g.drawString("CAPTAIN AMERICA", 615, 25);
-        g.setColor(Color.blue);
+        g.setColor(Color.red);
         g.drawString("Remaining Lives: " + GameObject.remainCap + "", 610, 60);
         g.setColor(Color.yellow);
         g.drawString("Points: " + GameObject.pointCap + "", 610, 90);
-        g.setColor(Color.MAGENTA);
+        g.setColor(Color.cyan);
         g.drawString("Normal Left: " + GameObject.CapNormal, 610, 120);
+        g.setColor(Color.ORANGE);
         g.drawString("Ultimate Left: " + GameObject.CapUltimate, 610, 150);
 
-        g.setColor(Color.GREEN);
-        g.drawString("UP: [W]", 800, 60);
-        g.drawString("DOWN: [S]", 800, 90);
-        g.drawString("Shoot ONCE: [F]", 800, 120);
-        g.drawString("Ultimate: [G]", 800, 150);
-        g.drawString("Reload: [H]", 800, 180);
+//        g.setColor(Color.GREEN);
+//        g.drawString("UP: [W]", 800, 60);
+//        g.drawString("DOWN: [S]", 800, 90);
+//        g.drawString("Shoot ONCE: [F]", 800, 120);
+//        g.drawString("Ultimate: [G]", 800, 150);
+//        g.drawString("Reload: [H]", 800, 180);
 
         /**
          * RULE

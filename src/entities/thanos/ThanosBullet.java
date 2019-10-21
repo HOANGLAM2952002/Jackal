@@ -11,7 +11,7 @@ import entities.player.ironman.IronManShoot;
 import renderer.Animation;
 
 public class ThanosBullet extends GameObject {
-    double spellDistance = 10;
+    double spellDistance = 5;
     double newAngle;
 
     public ThanosBullet(){
@@ -27,11 +27,8 @@ public class ThanosBullet extends GameObject {
 
         IronMan ironMan = GameObject.checkCollider(this, IronMan.class);
         if (ironMan != null){
-            ironMan.deActive();
             this.deActive();
-            if (remainIron == 0){
-                remainIron--;
-            }
+            ironMan.deActive();
             if (pointIron >= 10){
                 pointIron -= 10;
             } else {
@@ -47,8 +44,8 @@ public class ThanosBullet extends GameObject {
 
         CaptainAmerica captainAmerica = GameObject.checkCollider(this, CaptainAmerica.class);
         if (captainAmerica != null){
-            captainAmerica.deActive();
             this.deActive();
+            captainAmerica.deActive();
             if (pointCap >= 10){
                 pointCap -= 10;
             } else {

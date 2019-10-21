@@ -2,10 +2,13 @@ package Scene;
 
 import bases.GameObject;
 import entities.Background;
-import entities.HP;
+import entities.CapBox;
+import entities.hp.HP;
+import entities.IronBox;
 import entities.gauntlet.Gauntlet;
 
 import entities.gauntlet.GauntletSpawner;
+import entities.hp.HPSpawner;
 import entities.player.captainamerica.CaptainAmerica;
 import entities.player.ironman.IronMan;
 import entities.thanos.Thanos;
@@ -15,6 +18,9 @@ public class GamePlayScene extends Scene{
     @Override
     public void init() {
         Background background = new Background();
+        IronBox ironBox = new IronBox();
+        CapBox capBox = new CapBox();
+
         IronMan ironMan = GameObject.recycle(IronMan.class);
 
         Gauntlet gauntlet = GameObject.recycle(Gauntlet.class);
@@ -25,8 +31,9 @@ public class GamePlayScene extends Scene{
 
         CaptainAmerica captainAmerica = GameObject.recycle(CaptainAmerica.class);
 
+        //HP hp = GameObject.recycle(HP.class);
+        //HPSpawner hpSpawner = new HPSpawner();
 
-        HP hP = GameObject.recycle(HP.class);
 
     }
 

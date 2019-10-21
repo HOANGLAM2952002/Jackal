@@ -9,7 +9,7 @@ import renderer.ImageRenderer;
 public class BackgroundWelcome extends GameObject {
     public BackgroundWelcome(){
         this.anchor.set(0,0);
-        this.renderer = new ImageRenderer("materials/background.png");
+        this.renderer = new ImageRenderer("materials/Open.png");
     }
 
     @Override

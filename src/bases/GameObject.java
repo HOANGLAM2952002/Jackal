@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class GameObject {
-    public static int remainCap = 4;
-    public static int remainIron = 4;
+    public static int remainCap = 2;
+    public static int remainIron = 2;
     public static int pointCap = 0;
     public static int pointIron = 0;
     public static int IronUltimate = 3;

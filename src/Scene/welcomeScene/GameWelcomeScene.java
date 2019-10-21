@@ -1,6 +1,8 @@
 package Scene.welcomeScene;
 import Scene.Scene;
 import bases.GameObject;
+import entities.CapBox;
+import entities.IronBox;
 
 public class GameWelcomeScene extends Scene {
 

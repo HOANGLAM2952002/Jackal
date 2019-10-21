@@ -8,7 +8,7 @@ import renderer.Animation;
 
 
 public class Thanos extends GameObject {
-    int spellNum = 10;
+    int spellNum = 12;
     int bullet_cnt = 0;
     public Thanos(){
         this.renderer = new Animation(20, SpriteUtils.loadImage("materials/Thanos.png"));
