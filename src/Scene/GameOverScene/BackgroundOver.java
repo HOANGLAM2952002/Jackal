@@ -9,10 +9,10 @@ import renderer.ImageRenderer;
 public class BackgroundOver extends GameObject {
     public BackgroundOver(){
         //this.renderer = new ImageRenderer("materials/background.png");
-        if (GameObject.remainCap < 0){
+        if (GameObject.remainCap < 1){
             this.renderer = new ImageRenderer("materials/OverIron.png");
         }
-        if (GameObject.remainIron < 0){
+        if (GameObject.remainIron < 1){
             this.renderer = new ImageRenderer("materials/OverCap.png");
         }
         this.anchor.set(0,0);
@@ -28,8 +28,8 @@ public class BackgroundOver extends GameObject {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            remainCap = 4;
-            remainIron = 4;
+            remainCap = 5;
+            remainIron = 5;
             pointCap = 0;
             pointIron = 0;
             CapUltimate = 5;

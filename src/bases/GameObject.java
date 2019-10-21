@@ -1,4 +1,6 @@
 package bases;
+import Scene.GameOverScene.GameOverScene;
+import Scene.SceneManager;
 import renderer.Renderer;
 
 import java.awt.*;
@@ -7,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class GameObject {
-    public static int remainCap = 2;
-    public static int remainIron = 2;
+    public static int remainCap = 5;
+    public static int remainIron = 5;
     public static int pointCap = 0;
     public static int pointIron = 0;
     public static int IronUltimate = 3;
@@ -127,6 +129,9 @@ public class GameObject {
 
     public void run() {
         this.position.addUp(this.velocity);
+        if (GameObject.remainIron <= 0 || GameObject.remainCap <= 0) {
+            SceneManager.signNewScene(new GameOverScene());
+        }
     }
 
     public void deActive(){

@@ -1,5 +1,6 @@
 package Scene;
 
+import bases.AudioUtils;
 import bases.GameObject;
 import entities.Background;
 import entities.CapBox;

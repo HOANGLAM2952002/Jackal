@@ -26,12 +26,6 @@ public class CaptainAmerica extends GameObject{
         if (KeyPressed.getInstance().SPressed){
             vy = 5;
         }
-//        if (KeyPressed.getInstance().DPressed){
-//            vx = 10;
-//        }
-//        if (KeyPressed.getInstance().APressed){
-//            vx = -10;
-//        }
 
         if (KeyPressed.getInstance().CaptainshootPresed && cnt >= 20 && CapUltimate >= 0){
             this.castSpells();

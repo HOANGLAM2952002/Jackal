@@ -28,7 +28,9 @@ public class ThanosBullet extends GameObject {
         IronMan ironMan = GameObject.checkCollider(this, IronMan.class);
         if (ironMan != null){
             this.deActive();
-            ironMan.deActive();
+            if (remainIron > 0){
+                ironMan.deActive();
+            }
             if (pointIron >= 10){
                 pointIron -= 10;
             } else {
@@ -45,7 +47,9 @@ public class ThanosBullet extends GameObject {
         CaptainAmerica captainAmerica = GameObject.checkCollider(this, CaptainAmerica.class);
         if (captainAmerica != null){
             this.deActive();
-            captainAmerica.deActive();
+            if (remainCap > 0){
+                captainAmerica.deActive();
+            }
             if (pointCap >= 10){
                 pointCap -= 10;
             } else {

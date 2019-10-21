@@ -38,14 +38,6 @@ public class GameCanvas extends JPanel {
                     KeyPressed.getInstance().downPressed = true;
                 }
 
-//                if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-//                    KeyPressed.getInstance().rightPressed = true;
-//                }
-//
-//                if (e.getKeyCode() == KeyEvent.VK_LEFT){
-//                    KeyPressed.getInstance().leftPressed = true;
-//                }
-
                 if (e.getKeyCode() == KeyEvent.VK_M){
                     KeyPressed.getInstance().IronshootPresed = true;
                 }
@@ -69,14 +61,6 @@ public class GameCanvas extends JPanel {
                 if (e.getKeyCode() == KeyEvent.VK_S){
                     KeyPressed.getInstance().SPressed = true;
                 }
-
-//                if (e.getKeyCode() == KeyEvent.VK_D){
-//                    KeyPressed.getInstance().DPressed = true;
-//                }
-//
-//                if (e.getKeyCode() == KeyEvent.VK_A){
-//                    KeyPressed.getInstance().APressed = true;
-//                }
 
                 if (e.getKeyCode() == KeyEvent.VK_F){
                     KeyPressed.getInstance().CaptainshootOnePressed = true;
@@ -105,13 +89,7 @@ public class GameCanvas extends JPanel {
                     KeyPressed.getInstance().downPressed = false;
                 }
 
-//                if (e.getKeyCode() == KeyEvent.VK_RIGHT){
-//                    KeyPressed.getInstance().rightPressed = false;
-//                }
-//
-//                if (e.getKeyCode() == KeyEvent.VK_LEFT){
-//                    KeyPressed.getInstance().leftPressed = false;
-//                }
+
                 if (e.getKeyCode() == KeyEvent.VK_M){
                     KeyPressed.getInstance().IronshootPresed = false;
                 }
@@ -133,14 +111,6 @@ public class GameCanvas extends JPanel {
                 if (e.getKeyCode() == KeyEvent.VK_S){
                     KeyPressed.getInstance().SPressed = false;
                 }
-
-//                if (e.getKeyCode() == KeyEvent.VK_D){
-//                    KeyPressed.getInstance().DPressed = false;
-//                }
-//
-//                if (e.getKeyCode() == KeyEvent.VK_A){
-//                    KeyPressed.getInstance().APressed = false;
-//                }
 
                 if (e.getKeyCode() == KeyEvent.VK_F){
                     KeyPressed.getInstance().CaptainshootOnePressed = false;
@@ -167,9 +137,6 @@ public class GameCanvas extends JPanel {
         GameObject.renderAll(g);
         g.setColor(Color.darkGray);
         g.fillRect(600, 0, 3, 600);
-        //g.fillRect(302, 0, 3, 600);
-        //g.fillRect(600, 265, 390, 3);
-
 
         /**
          * IRON MAN STATS
@@ -187,13 +154,6 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.ORANGE);
         g.drawString("Ultimate Left: " + GameObject.IronUltimate, 610, 420);
 
-//        g.setColor(Color.GREEN);
-//        g.drawString("UP: [ARROW UP]", 800, 330);
-//        g.drawString("DOWN: [ARROW DOWN]", 800, 360);
-//        g.drawString("Shoot ONCE: [COMMA]", 800, 390);
-//        g.drawString("Ultimate: [M]", 800, 420);
-//        g.drawString("Reload: [N]", 800, 450);
-
         /**
          * CAPTAIN AMERICA STATS
          */
@@ -210,46 +170,10 @@ public class GameCanvas extends JPanel {
         g.setColor(Color.ORANGE);
         g.drawString("Ultimate Left: " + GameObject.CapUltimate, 610, 150);
 
-//        g.setColor(Color.GREEN);
-//        g.drawString("UP: [W]", 800, 60);
-//        g.drawString("DOWN: [S]", 800, 90);
-//        g.drawString("Shoot ONCE: [F]", 800, 120);
-//        g.drawString("Ultimate: [G]", 800, 150);
-//        g.drawString("Reload: [H]", 800, 180);
-
-        /**
-         * RULE
-         */
-//        g.setColor(Color.WHITE);
-//        g.drawString("RULE OF THE GAME", 790, 80);
-//        g.drawString("   Remaining Lives -1 = PLAYER LOSES", 755, 120);
-//        g.drawString("   Ultimate -1 = CANNOT SHOOT HEXA", 755, 150);
-//        g.drawString("   100 Points = BONUS LIVE", 755, 180);
-//        g.drawString("   THANOS = 30 POINTS", 755, 210);
-//        g.drawString("   GAUNTLET = 5 POINTS", 755, 240);
-//        g.drawString("   PLAYER = 20 POINTS", 755, 270);
-//        g.drawString("   HIT BY THANOS GEM = -5 POINTS", 755, 300);
-        /**
-         * WINS STATE
-         */
-        if (GameObject.remainCap < 0){
-            g.setColor(Color.ORANGE);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
-            g.drawString("IRON MAN WINS", 740, 25);
-        }
-
-        if (GameObject.remainIron < 0){
-            g.setColor(Color.ORANGE);
-            g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
-            g.drawString("CAPTAIN AMERICA WINS", 740, 25);
-        }
-
         if (GameObject.pointIron >= 100){
             GameObject.remainIron++;
             GameObject.pointIron -= 100;
         }
-
-
     }
 
 }
